@@ -1,0 +1,3 @@
+data/census/*.csv
+data/census/*.zip
+data/census/*_README.pdf
