@@ -1,0 +1,5 @@
+data/pums/raw/*.csv
+data/pums/raw/*.zip
+data/pums/raw/*_README.pdf
+data/temp/*
+data/pums/processed/*.csv
