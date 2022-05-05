@@ -1,3 +1,5 @@
 data/census/raw/*.csv
 data/census/raw/*.zip
 data/census/raw/*_README.pdf
+data/temp/*
+data/census/processed/*.csv
