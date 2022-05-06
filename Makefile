@@ -23,5 +23,5 @@ all_grad_data : code/compile_raw_pums_data.py
 
 .PHONY : compute_major_stats
 major_stats : code/generate_major_stats.py all_grad_data
-	conda activate hw7env
+	#conda activate hw7env
 	python code/generate_major_stats.py
