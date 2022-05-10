@@ -29,3 +29,4 @@ major_stats : code/generate_major_stats.py all_grad_data
 .PHONY : grad_stats
 grad_stats : code/generate_grad_stats.py all_grad_data
 	python code/generate_grad_stats.py
+
