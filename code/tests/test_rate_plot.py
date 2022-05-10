@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from collegetools.utils import combine2table, employment_rate_table, plotting_trend, filter_major_category
+from code.rateplot import combine2table, employment_rate_table, plotting_trend, filter_major_category
 import os
 
 table1 = pd.read_csv("data/pums/processed/10_edu_wage_data.csv")
