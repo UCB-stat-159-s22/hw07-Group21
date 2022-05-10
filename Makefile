@@ -17,16 +17,16 @@ raw_pums_data :  2010_census.zip 2012_census.zip 2014_census.zip 2014_census.zip
 	cd data/pums/raw; mv psam_pusb.csv ss18pusb.csv
 
 .PHONY : all_grad_data
-all_grad_data : code/compile_raw_pums_data.py 
-	python code/compile_raw_pums_data.py
+all_grad_data : collegetools/compile_raw_pums_data.py 
+	python collegetools/compile_raw_pums_data.py
 
 
 .PHONY : major_stats
-major_stats : code/generate_major_stats.py all_grad_data
-	python code/generate_major_stats.py
+major_stats : collegetools/generate_major_stats.py 
+	python collegetools/generate_major_stats.py
 
 
 .PHONY : grad_stats
-grad_stats : code/generate_grad_stats.py all_grad_data
-	python code/generate_grad_stats.py
+grad_stats : collegetools/generate_grad_stats.py 
+	python collegetools/generate_grad_stats.py
 
