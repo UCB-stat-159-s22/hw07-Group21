@@ -8,7 +8,7 @@ dependencies:
   - statsmodels=0.13.1
   - seaborn=0.11.2
   - scipy=1.7.3
-#  - tdqm=0.0.1
+  - tqdm=4.62.3
 
   - pip:
     - wquantiles
