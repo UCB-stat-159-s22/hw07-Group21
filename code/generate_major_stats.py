@@ -57,7 +57,7 @@ def compute_recent_grad_stats_by_major(years=years):
 	"""
 	DOCSTRING
 	"""
-	major_list = pd.read_csv("data/kaggle/majors-list.csv")
+	major_list = pd.read_csv("data/fivethirtyeight/majors-list.csv")
 	major_list = major_list[~major_list['FOD1P'].str.contains('bb')]
 	major_list['FOD1P'] = major_list['FOD1P'].astype(int)
 	for year in tqdm(years):
