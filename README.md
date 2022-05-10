@@ -1,10 +1,14 @@
 Data: [Kaggle College Majors Dataset](https://www.kaggle.com/datasets/tunguz/college-majors)
 
 
-To download and process origina PUMS data for 2010, 2012, 2014, 2016, and 2018: 
+To download and process original PUMS data for 2010, 2012, 2014, 2016, and 2018: 
 ```
 make env  # sets up environment
 make raw_pums_data
+make all_grad_data
+```
+Once this data has been saved, to run the python scripts that extract gender, grad degree, and income data use the make targets
+```
 make major_stats # computes wage and gender stats for recent grads by major
 make grad_stats # computes wage and gender stats split by graduate degree or not 
 ```
