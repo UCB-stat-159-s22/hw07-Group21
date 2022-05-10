@@ -7,6 +7,7 @@ years = [10,12,14,16,18]
 
 
 def weighted_median(df, val_name, weight_name):
+	"Return weighted median of column df[val_name] weighted by df[weight_name]"
 	if df.size > 0:
 		return int(wq.median(df[val_name], df[weight_name]))
 	else: 
@@ -14,7 +15,8 @@ def weighted_median(df, val_name, weight_name):
 
 def compute_grad_stats(df):
 	"""
-	Given a dataframe of entries for a specific major
+	Given a dataframe of entries for a specific major, return statistics for the group (see output).
+	Can be used in conjunction with pandas .groupby(*). 
 	
 	Input:
 	-----
@@ -70,7 +72,19 @@ def compute_grad_stats(df):
 
 def compute_graduate_stats_by_major(years=years):
 	"""
-	DOCSTRING
+	Compute statistics on graduate degrees for each major over the years provided. 
+	
+	Requires: 
+	--------
+	data/fivethirtyeight/majors-list.csv     
+		- file containing FOD1P codes, names, and categories for each major 
+	data/pums/processed/XX_edu_wage_data.csv 
+		- file for year 20XX containing FOD1P and the features used in `compute_grad_stats`
+	
+	Output:
+	-------
+	data/pums/processed/20XX_graduate_stats_by_major.csv 
+		- file for year 20XX  with aggregated statistics per major on graduate degrees 
 	"""
 	major_list = pd.read_csv("data/fivethirtyeight/majors-list.csv")
 	major_list = major_list[~major_list['FOD1P'].str.contains('bb')]

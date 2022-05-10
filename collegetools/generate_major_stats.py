@@ -8,7 +8,8 @@ years = [10,12,14,16,18]
 
 def compute_major_stats(df):
 	"""
-	Given a dataframe of entries for a specific major
+	Given a dataframe of entries for a specific major, return statistics for the group (see output).
+	Can be used in conjunction with pandas .groupby(*). 
 	
 	Input:
 	-----
@@ -38,8 +39,10 @@ def compute_major_stats(df):
 	full_time = df.query("WKW == 1 & WKHP >= 35")
 	full_time_men = full_time.query("SEX == 1")
 	full_time_women = full_time.query("SEX == 2")
-	output['total median']  = int(wq.median(full_time['WAGP'], full_time['PWGTP']))
-    
+	if full_time.size > 0:
+		output['total median']  = int(wq.median(full_time['WAGP'], full_time['PWGTP']))
+	else:
+		output['total median'] = -1
 	# compute median earnings split by men & women, if no data points, return -1 
 	if full_time_women.size > 0:
 		output['women median']  = int(wq.median(full_time_women['WAGP'], full_time_women['PWGTP']))
@@ -55,7 +58,19 @@ def compute_major_stats(df):
 
 def compute_recent_grad_stats_by_major(years=years):
 	"""
-	DOCSTRING
+	Compute statistics on for each major over the years provided. 
+	
+	Requires: 
+	--------
+	data/fivethirtyeight/majors-list.csv     
+		- file containing FOD1P codes, names, and categories for each major 
+	data/pums/processed/XX_edu_wage_data.csv 
+		- file for year 20XX containing FOD1P and the features used in `compute_major_stats`
+	
+	Output:
+	-------
+	data/pums/processed/20XX_recent_grad_stats_by_major.csv 
+		- file for year 20XX with aggregated statistics per major on gender/wages
 	"""
 	major_list = pd.read_csv("data/fivethirtyeight/majors-list.csv")
 	major_list = major_list[~major_list['FOD1P'].str.contains('bb')]
