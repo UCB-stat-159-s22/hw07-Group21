@@ -39,8 +39,10 @@ def compute_major_stats(df):
 	full_time = df.query("WKW == 1 & WKHP >= 35")
 	full_time_men = full_time.query("SEX == 1")
 	full_time_women = full_time.query("SEX == 2")
-	output['total median']  = int(wq.median(full_time['WAGP'], full_time['PWGTP']))
-    
+	if full_time.size > 0:
+		output['total median']  = int(wq.median(full_time['WAGP'], full_time['PWGTP']))
+	else:
+		output['total median'] = -1
 	# compute median earnings split by men & women, if no data points, return -1 
 	if full_time_women.size > 0:
 		output['women median']  = int(wq.median(full_time_women['WAGP'], full_time_women['PWGTP']))
