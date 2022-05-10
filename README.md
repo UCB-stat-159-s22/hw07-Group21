@@ -22,3 +22,4 @@ Troubleshooting for environment setp up and data:
 
 1. If you encounter `ModuleNotFoundError`, try to run `conda activate hw7env`
 2. If you encounter `CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.`, try to run `conda init --all`. Then close your terminal without shutting it down. Reopen it, and run the make command again.  
+
