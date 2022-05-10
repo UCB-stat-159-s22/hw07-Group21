@@ -16,12 +16,17 @@ raw_pums_data :  2010_census.zip 2012_census.zip 2014_census.zip 2014_census.zip
 	cd data/pums/raw; mv psam_pusa.csv ss18pusa.csv
 	cd data/pums/raw; mv psam_pusb.csv ss18pusb.csv
 
-.PHONY : extract_grad_data
+.PHONY : all_grad_data
 all_grad_data : code/compile_raw_pums_data.py 
 	python code/compile_raw_pums_data.py
 
 
-.PHONY : compute_major_stats
+.PHONY : major_stats
 major_stats : code/generate_major_stats.py all_grad_data
-	#conda activate hw7env
 	python code/generate_major_stats.py
+
+
+.PHONY : grad_stats
+grad_stats : code/generate_grad_stats.py all_grad_data
+	python code/generate_grad_stats.py
+
