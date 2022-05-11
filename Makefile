@@ -1,4 +1,6 @@
-
+.PHONY : all 
+all:
+	jupyter execute main.ipynb
 
 .PHONY : env
 env : 
