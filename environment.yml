@@ -11,6 +11,3 @@ dependencies:
   - tqdm=4.62.3
   - wquantiles=0.6
   - pytest
-
-  - pip:
-    - wquantiles
