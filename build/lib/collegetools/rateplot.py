@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-import wquantiles as wq
 
 def combine2table(table1, table2):
     """

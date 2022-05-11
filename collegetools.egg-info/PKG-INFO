@@ -1,12 +1,12 @@
 Metadata-Version: 2.1
-Name: code
-Version: -0.0.2-
-Summary: A Python library to code
+Name: collegetools
+Version: -0.0.1-
+Summary: A Python library to collegetools
 Home-page: UNKNOWN
 Author: Stephen Ou, Anya Michaelsen, Yiping Fan, Keon Etebari
 Author-email: stephenouu@berkeley.edu
 License: UNKNOWN
-Keywords: tools,code
+Keywords: tools,college
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3.9
 Classifier: License :: OSI Approved :: BSD License

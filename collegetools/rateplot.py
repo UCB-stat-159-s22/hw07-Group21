@@ -11,6 +11,7 @@ def combine2table(table1, table2):
     Combine two datasets, define the integer values to string value, and some data cleaning.
     Return a combined dataframe
     """
+	
     table1 = table1.dropna(axis = 0)
     # convert employment structure
     result = table1.set_index('FOD1P').join(table2.set_index('FOD1P')).reset_index()

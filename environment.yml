@@ -9,6 +9,8 @@ dependencies:
   - seaborn=0.11.2
   - scipy=1.7.3
   - tqdm=4.62.3
+  - wquantiles=0.6
+  - pytest
 
   - pip:
     - wquantiles
