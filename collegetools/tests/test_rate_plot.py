@@ -6,7 +6,7 @@ from collegetools.rateplot import combine2table, employment_rate_table, plotting
 import os
 
 table1 = pd.read_csv("data/pums/processed/10_edu_wage_data.csv")
-table2 = pd.read_csv("data/fivethiryeight/majors-list.csv")
+table2 = pd.read_csv("data/fivethirtyeight/majors-list.csv")
 table2 = table2[table2["FOD1P"] != "bbbb "]
 table2["FOD1P"] = pd.to_numeric(table2["FOD1P"])
 combined_table = combine2table(table1, table2)
