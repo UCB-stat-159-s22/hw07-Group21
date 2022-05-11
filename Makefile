@@ -29,4 +29,3 @@ major_stats : collegetools/generate_major_stats.py
 .PHONY : grad_stats
 grad_stats : collegetools/generate_grad_stats.py 
 	python collegetools/generate_grad_stats.py
-
