@@ -6,7 +6,7 @@ import seaborn as sns
 
 # Plot a horizonal bar plot of each major's median income differences 
 # between men and women (men - women) recent college graduates in the given year
-def plot_gender_income_diff(year, recent_grads):
+def plot_gender_income_diff(year, recent_grads, save_dir='figures'):
 	
 	'''
 	year: an integer selected from 2010, 2012, 2014, 2016 or 2018
@@ -32,13 +32,13 @@ def plot_gender_income_diff(year, recent_grads):
 	plt.figure(figsize=(5,40))
 	plt.barh(major, income_diff)
 	plt.title("Median Income Differences between Men and Women (Men - Women) in All Majors")
-	plt.savefig('figures/'+str(year)+'gender_income_difference.png')
+	plt.savefig(save_dir+'/'+str(year)+'gender_income_difference.png')
 
 	return sorted_grads_diff
 
 
 # Creat line plots to show how gender gap in income changed for each major category over time
-def plot_income_diff_category(recent_grads):
+def plot_income_diff_category(recent_grads, save_dir='figures'):
 	'''
 	recent_grads: a list of processed dataframes from 2010 to 2018
 				with N/A dropped and income differences calculated
@@ -73,25 +73,25 @@ def plot_income_diff_category(recent_grads):
 	plt.title('Income Difference (Men - Women) for all Majors')
 	plt.legend(income_diff_category_time.columns[0:5], loc = 4)
 	plt.show()
-	plt.savefig('figures/gender_income_difference_majors_1.png')
+	plt.savefig(save_dir+'/'+'gender_income_difference_majors_1.png')
 
 	plt.plot(year, categories_2)
 	plt.title('Income Difference (Men - Women) for all Majors')
 	plt.legend(income_diff_category_time.columns[6:11], loc = 4)
 	plt.show()
-	plt.savefig('figures/gender_income_difference_majors_2.png')
+	plt.savefig(save_dir+'/'+'gender_income_difference_majors_2.png')
 
 	plt.plot(year, categories_3)
 	plt.title('Income Difference (Men - Women) for all Majors')
 	plt.legend(income_diff_category_time.columns[12:], loc = 1)
 	plt.show()
-	plt.savefig('figures/gender_income_difference_majors_3.png')
+	plt.savefig(save_dir+'/'+'gender_income_difference_majors_3.png')
 
 	return income_diff_category_time
 
 
 # Draw a scatter plot of women ratio vs. total median earning to see the correlation
-def womenratio_median_scatter_plot(df, year):
+def womenratio_median_scatter_plot(df, year,save_dir='figures'):
 	'''
 	df: a datafram containing data of recent college graduates
 	year: an integer selected from 2010, 2012, 2014, 2016 or 2018
@@ -107,7 +107,7 @@ def womenratio_median_scatter_plot(df, year):
 	# Title the plot
 	plt.title("women ratio vs total median")
 	#save the figure to figures folder
-	plt.savefig('figures/'+str(year)+'_women_ratio_vs_total_median.png')
+	plt.savefig(save_dir+'/'+str(year)+'_women_ratio_vs_total_median.png')
 	# Calculate correlation coef
 	corr = df['women_ratio'].corr(df['total median'])
 	# Print the corr coref in a readable line

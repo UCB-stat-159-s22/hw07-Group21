@@ -56,7 +56,7 @@ def employment_rate_table(table1, year):
     return final_df
 
 
-def plotting_trend(table, plot_title, plot_xlabel, plot_ylabel, year_lst, filename, filetype):
+def plotting_trend(table, plot_title, plot_xlabel, plot_ylabel, year_lst, filename, filetype, save_dir="figures"):
     """
     Input:
         - table: the dataframe with the rate of each major category
@@ -75,7 +75,7 @@ def plotting_trend(table, plot_title, plot_xlabel, plot_ylabel, year_lst, filena
     plt.legend(bbox_to_anchor = (1, 0.5, 1, 0.4), loc = 'upper left')
     plt.xticks(np.arange(0, len(year_lst), 1), year_lst)
     plt.grid()
-    plt.savefig('figures/' + filename + filetype, bbox_inches = "tight")
+    plt.savefig(save_dir + "/" + filename + filetype, bbox_inches = "tight")
 
 
 # function to calculate wage rate in each major category

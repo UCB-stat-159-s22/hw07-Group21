@@ -1,6 +1,9 @@
 .PHONY : all 
 all:
 	jupyter execute main.ipynb
+	jupyter execute analysis_notebooks/Keon-main.ipynb
+	jupyter execute analysis_notebooks/Yiping-main.ipynb
+	jupyter execute analysis_notebooks/Stephen-main.ipynb
 
 .PHONY : env
 env : 
