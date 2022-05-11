@@ -1,5 +1,7 @@
 # College Majors Analysis
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-s22/hw07-Group21/main?labpath=main.ipynb)
+
 This repository presents several analyses of college outcomes by major. The original data that inspired the project comes from a [FiveThirtyEight article](https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/) and the associated [Github repo](https://github.com/fivethirtyeight/data/tree/master/college-majors). 
 
 
