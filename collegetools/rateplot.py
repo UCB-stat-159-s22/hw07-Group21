@@ -9,7 +9,8 @@ def combine2table(table1, table2):
         - table1: first table with integer as values
         - table2: second table with string as values
     Combine two datasets, define the integer values to string value, and some data cleaning.
-    Return a combined dataframe
+    Output: 
+		- a combined dataframe
     """
 	
     table1 = table1.dropna(axis = 0)
@@ -31,7 +32,8 @@ def employment_rate_table(table1, year):
         - table1: table that needs to add a new variable
         - year: the year of that table
     Calculate the employment rate for each major category based on the combined dataframe
-    Return clean dataframe with employment rate variable
+    Output: 
+		- clean dataframe with employment rate variable
     """
     table_copy = table1.copy()
     
@@ -83,7 +85,8 @@ def filter_major_category(table, year, employment_df):
         - table: table that needs to add a new variable
         - year: the year of that table
     Adjusting the total hours, then calculate the wage rate for each major category.
-    Return dataframe with a new wage rate column
+    Output:
+		- dataframe with a new wage rate column
     """
     temp_table = table.copy()
     # we only want to include the employed people
