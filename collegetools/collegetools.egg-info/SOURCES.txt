@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+collegetools.egg-info/PKG-INFO
+collegetools.egg-info/SOURCES.txt
+collegetools.egg-info/dependency_links.txt
+collegetools.egg-info/requires.txt
+collegetools.egg-info/top_level.txt
