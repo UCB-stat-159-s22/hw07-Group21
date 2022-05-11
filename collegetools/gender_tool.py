@@ -32,13 +32,13 @@ def plot_gender_income_diff(year, recent_grads):
 	plt.figure(figsize=(5,40))
 	plt.barh(major, income_diff)
 	plt.title("Median Income Differences between Men and Women (Men - Women) in All Majors")
+	plt.savefig('figures/'+str(year)+'gender_income_difference.png')
 
 	return sorted_grads_diff
 
 
 # Creat line plots to show how gender gap in income changed for each major category over time
 def plot_income_diff_category(recent_grads):
-    
 	'''
 	recent_grads: a list of processed dataframes from 2010 to 2018
 				with N/A dropped and income differences calculated
@@ -64,20 +64,28 @@ def plot_income_diff_category(recent_grads):
 	categories_1 = income_diff_category_time[income_diff_category_time.columns[0:5]]
 	categories_2 = income_diff_category_time[income_diff_category_time.columns[6:11]]
 	categories_3 = income_diff_category_time[income_diff_category_time.columns[12:]]
-	
+
 	# Make a list of years
 	year = [2010, 2012, 2014, 2016, 2018]
 
 	# Plot each set of categories in a line plot
 	plt.plot(year, categories_1)
+	plt.title('Income Difference (Men - Women) for all Majors')
 	plt.legend(income_diff_category_time.columns[0:5], loc = 4)
 	plt.show()
+	plt.savefig('figures/gender_income_difference_majors_1.png')
+
 	plt.plot(year, categories_2)
+	plt.title('Income Difference (Men - Women) for all Majors')
 	plt.legend(income_diff_category_time.columns[6:11], loc = 4)
 	plt.show()
+	plt.savefig('figures/gender_income_difference_majors_2.png')
+
 	plt.plot(year, categories_3)
+	plt.title('Income Difference (Men - Women) for all Majors')
 	plt.legend(income_diff_category_time.columns[12:], loc = 1)
 	plt.show()
+	plt.savefig('figures/gender_income_difference_majors_3.png')
 
 	return income_diff_category_time
 
@@ -98,6 +106,8 @@ def womenratio_median_scatter_plot(df, year):
 	sns.regplot('women_ratio', 'total median', data=df)
 	# Title the plot
 	plt.title("women ratio vs total median")
+	#save the figure to figures folder
+	plt.savefig('figures/'+str(year)+'_women_ratio_vs_total_median.png')
 	# Calculate correlation coef
 	corr = df['women_ratio'].corr(df['total median'])
 	# Print the corr coref in a readable line
